@@ -12,7 +12,7 @@ export function Homecon() {
   const [validatetboolean, setValidateboolean] = useState(true);
   const textRef = useRef(null);
 
-  const api = "https://urlshortnodejs.onrender.com";
+  const api = "https://urlshortnerz.onrender.com";
 
   useEffect(() => {
     const clipboard = new Clipboard(".copy-button", {
