@@ -12,6 +12,8 @@ export function Homecon() {
   const [validatetboolean, setValidateboolean] = useState(true);
   const textRef = useRef(null);
 
+  const api = "https://urlshortnodejs.onrender.com";
+
   useEffect(() => {
     const clipboard = new Clipboard(".copy-button", {
       target: () => textRef.current,
@@ -55,7 +57,7 @@ export function Homecon() {
     if (urlPattern.test(passurl)) {
       console.log("URL entered:", passurl);
       const postrequest = await axios
-        .post("http://localhost:4000/urlshort", {
+        .post(`${api}/urlshort`, {
           url: passurl,
         })
         .then((response) => {
@@ -70,7 +72,7 @@ export function Homecon() {
 
   const checkurlcounts = async () => {
     const postclickcount = await axios
-      .post("http://localhost:4000/urlcount", {
+      .post(`${api}/urlcount`, {
         urlcheck: checkurl,
       })
       .then((response) => {
